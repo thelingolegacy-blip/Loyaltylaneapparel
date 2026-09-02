@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LingoLegacyStage03AppShell",
+  "framework": "React + Vite",
+  "architecture": "single-page application",
+  "routing": "client-side",
+  "lazyBoundaries": true,
+  "statePersistentShell": true,
+  "responsive": true,
+  "accessibility": {
+    "keyboardNavigation": true,
+    "focusManagement": true,
+    "reducedMotion": true,
+    "minimumTouchTargetPx": 44
+  },
+  "regions": [
+    "app-bar",
+    "navigation",
+    "overlay-manager",
+    "primary-viewport",
+    "toast-region",
+    "modal-region"
+  ],
+  "routes": {
+    "/": "home",
+    "/shop": "shop",
+    "/product/:productId": "product",
+    "/tap-stitch": "tap-stitch",
+    "/bag": "bag",
+    "/account": "account"
+  },
+  "world": "loyalty-lane-shadow-noir",
+  "brand": {
+    "name": "Loyalty Lane Apparel",
+    "motto": "Stay Loyal.",
+    "experience": "premium streetwear commerce"
+  },
+  "integrationBoundaries": {
+    "identity": "Lingo ID",
+    "commerce": "Tap Stitch / checkout handoff",
+    "rewards": "XP and rewards",
+    "backend": "Firebase adapters",
+    "edge": "Cloudflare adapters",
+    "analytics": "event instrumentation"
+  },
+  "productionGate": "build -> test -> accessibility -> integration -> evidence"
+}
