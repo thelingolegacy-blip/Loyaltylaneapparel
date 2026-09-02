@@ -1,0 +1,67 @@
+version: 1
+system: lingo-legacy
+stage: 01
+status: designed
+purpose: Canonical schemas and configuration boundaries for the unified production spine.
+
+language:
+  domain: language-learning-and-legacy
+  target_audience: general-learners-and-families
+  gamification: xp-rewards-progress
+  localization: explicit-locale-required
+
+entities:
+  lexicon_item:
+    id: string
+    language: string
+    locale: string
+    term: string
+    normalized_term: string
+    definition: string
+    examples: [string]
+    difficulty: enum[easy,medium,hard]
+    tags: [string]
+    version: integer
+    active: boolean
+  progress_profile:
+    user_id: string
+    xp: integer
+    level: integer
+    streak_days: integer
+    completed_items: integer
+    last_activity_at: datetime
+  lesson_tree:
+    id: string
+    title: string
+    locale: string
+    nodes: [lesson_node]
+    version: integer
+    published: boolean
+
+lesson_node:
+  id: string
+  type: enum[lesson,practice,quiz,review]
+  title: string
+  prerequisites: [string]
+  lexicon_item_ids: [string]
+  xp_reward: integer
+
+config:
+  environments: [development,staging,production]
+  feature_flags:
+    remote_config_required: true
+    fail_closed_for_unknown_flags: true
+  security:
+    secrets_in_source_control: false
+    client_tokens_in_urls: false
+  release:
+    require_tests: true
+    require_asset_validation: true
+    require_accessibility_check: true
+    require_rollback_target: true
+
+ownership:
+  canonical_source: github
+  runtime_data: firebase-or-approved-backend
+  edge: cloudflare
+  deployment: appdeploy-or-approved-deployer
