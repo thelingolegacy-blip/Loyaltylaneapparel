@@ -1,69 +1,61 @@
-# Loyalty Lane Apparel™ — Studio Production Front v2.0
+# Loyalty Lane Apparel — Studio Production
 
-## Mission
-Build Loyalty Lane Apparel as a flagship dynamic commerce application inside The Lingo Legacy.
+**Shadow Noir streetwear. Stay Loyal.**
 
-**Brand:** Loyalty Lane Apparel™  
-**Signature:** Tap Stitch  
-**Motto:** Stay Loyal.  
-**Positioning:** premium streetwear / lifestyle / loyalty-driven commerce
+Loyalty Lane Apparel is a dynamic, production-oriented commerce experience within The Lingo Legacy ecosystem. The product surface is intentionally cohesive: one primary application experience with routed states, drawers, modals, product views, cart states, account/identity surfaces, and checkout handoff rather than a collection of disconnected static pages.
 
-## One-page application rule
-Loyalty Lane is one cohesive application surface. Landing, collections, product discovery/detail, cart, checkout handoff, Tap Stitch identity, rewards, Ask Lingo, lookbook, account state, and production telemetry work together in one application shell rather than disconnected microsites. The same rule applies across the Legacy: one primary application page/shell per product, with routed states and panels inside the application. Each product retains its own visual world.
+## Studio standard
 
-## Studio visual world
-Loyalty Lane uses a Shadow Noir streetwear environment: editorial fashion lighting, dark architectural depth, metallic detail, restrained gold accents, campaign imagery, premium typography, responsive motion, tactile controls, and Tap Stitch interactions.
+Every layer is upgraded together:
 
-The visual system supports cinematic hero/campaign surfaces, product galleries, collection/drop environments, animated loaders/transitions, canonical app/favicon/phone icons, mobile-first touch interactions, accessible focus/contrast, reduced-motion, loading, empty, and error states.
+- **World:** Shadow Noir, edgy premium streetwear environment
+- **Web/App:** responsive application shell and state-driven navigation
+- **UI/UX:** typography, spacing, controls, feedback, empty/loading/error states
+- **Icons:** canonical brand mark, app icon, favicon, loader, navigation and product icons
+- **Media:** responsive product/campaign assets with canonical-source tracking
+- **Motion:** page transitions, touch feedback, product interactions and reduced-motion fallback
+- **Touch:** mobile-first hit targets and explicit pressed/focus/loading/success/error states
+- **Commerce:** catalog → product → cart → checkout handoff
+- **Identity:** Lingo ID integration surface
+- **Rewards:** XP/rewards integration surface
+- **Analytics:** event instrumentation boundary
 
-## Application architecture
+## Unified production stack
+
+`GITHUB → FLUTTER → FIREBASE → CLOUDFLARE → APPDEPLOY`
+
+### Runtime pipeline
+
 `WEB/UI → APP SHELL → LINGO ID → CATALOG → TAP STITCH → CART → CHECKOUT HANDOFF → REWARDS/XP → ASK LINGO → ANALYTICS → QA → DEPLOY`
 
-The application remains dynamic. No fake production success states, fabricated inventory, or hardcoded claims about live services.
+### Touch pipeline
 
-## Cross-platform production contract
-
-### GitHub
-Source-control and CI/CD contract for application code, Flutter/mobile code, infrastructure configuration, tests, release notes, and rollback references.
-
-### Flutter
-Mobile implementation preserves the same product contract and visual identity: one app surface, shared design tokens, canonical icons, touch pipeline, navigation state, authentication, commerce handoff, rewards, and analytics.
-
-### Firebase
-Integration target for authenticated identity, application data/state, analytics, notifications, and mobile services where configured. Production credentials remain outside source control.
-
-### Cloudflare
-Production edge/infrastructure target for web delivery, Workers/API services, D1/KV/R2 resources, custom domains, security controls, caching, and routing where configured.
-
-## Commerce
-Product catalog, variants, pricing, inventory state, product metadata, collection/drop metadata, commerce-provider adapter, checkout handoff, and order confirmation state. Actual payment processing requires an approved provider and verified production credentials. No fake checkout success states.
-
-## Loyalty + Lingo
-Lingo ID integration, rewards/XP, member status, eligible rewards, Ask Lingo ⭐️ — Apparel Expert, product help, sizing guidance, collection discovery, and order-help routing. Ask Lingo remains connected to the shared Lingo.AI contract.
-
-## Editorial / fashion studio
-Lookbook, campaign stories, seasonal drops, limited collections, upcoming collections, Coming Soon cards, and campaign video/short-form slots.
-
-## Analytics
-Canonical events: landing_view, collection_view, product_view, variant_select, add_to_cart, cart_view, checkout_start, checkout_handoff, purchase_confirmation, lookbook_view, notify_me, ask_lingo_open, ask_lingo_query.
-
-## Touch pipeline
 `TOUCH → HIT TARGET → UI STATE → FEEDBACK → API ACTION → PERSIST → ANALYTICS → VISUAL CONFIRMATION`
 
-Controls must be touch-safe, keyboard-accessible, visually responsive, and resilient to slow or failed network responses.
+### Asset pipeline
 
-## Release gate
-1. Verify repository commit  
-2. Verify Flutter/web build  
-3. Verify Firebase integration where configured  
-4. Verify Cloudflare deployment/routing where configured  
-5. Verify production domain  
-6. Verify commerce provider  
-7. Verify checkout handoff  
-8. Verify analytics  
-9. Run accessibility smoke test  
-10. Run mobile/desktop smoke test  
-11. Record release version and rollback target
+`SOURCE ART → CANONICAL ASSET → RESPONSIVE VARIANTS → ICON/LOADER VARIANTS → OPTIMIZATION → RESOURCE REGISTRY → RUNTIME → QA`
 
-## Cross-ecosystem rule
-Loyalty Lane Apparel is one Lingo Legacy entity. It shares platform contracts with the Legacy while retaining its own catalog, fashion knowledge, policies, iconography, world, media, sound, and brand identity.
+## Infrastructure boundaries
+
+- **GitHub:** source control, CI/CD definitions, tests, release records and rollback references.
+- **Flutter:** mobile shell, shared tokens, navigation state, touch behavior and native app assets.
+- **Firebase:** identity/data/state/analytics/notifications where configured.
+- **Cloudflare:** edge delivery, Workers/API, D1/KV/R2, domains, caching and security where configured.
+- **AppDeploy:** deployment orchestration, resource validation, previews and promotion where configured.
+
+Secrets must remain in managed secret stores and never be committed to source.
+
+## Production gate
+
+`BUILD → TEST → ASSET VALIDATION → RESPONSIVE QA → ACCESSIBILITY → INTEGRATION → DOMAIN/ROUTING → ANALYTICS → EVIDENCE → ROLLBACK TARGET → RELEASE`
+
+No security or asset-validation boundary is bypassed. Validation failures are fixed at the source/resource contract while canonical artwork and product identity are preserved.
+
+## Product identity
+
+**LOYALTY LANE APPAREL**  
+**TAP STITCH**  
+**STAY LOYAL.**
+
+The visual system is deliberately distinct from other Lingo Legacy properties while sharing the underlying production standards.
