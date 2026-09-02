@@ -1,0 +1,21 @@
+# Studio Release Checklist
+
+- [ ] One-page application shell renders without blocking asset dependencies
+- [ ] Navigation preserves app state
+- [ ] Canonical brand/game/app icons present at required sizes
+- [ ] Critical imagery has validated resource paths and fallbacks
+- [ ] Touch targets are usable on phone/tablet
+- [ ] Keyboard focus and accessible labels are present
+- [ ] Loading, empty, success and error states are implemented
+- [ ] Reduced-motion behavior verified
+- [ ] Optional sound is user-controlled
+- [ ] Lingo ID integration boundary verified
+- [ ] Catalog/cart/checkout handoff verified
+- [ ] Rewards/XP hooks verified where enabled
+- [ ] Analytics events do not contain secrets or sensitive payloads
+- [ ] Firebase configuration uses environment/runtime configuration
+- [ ] Cloudflare bindings are environment-specific
+- [ ] No credentials or tokens committed to source
+- [ ] Production asset/security validators pass
+- [ ] Desktop and mobile smoke tests pass
+- [ ] Rollback target recorded before promotion
