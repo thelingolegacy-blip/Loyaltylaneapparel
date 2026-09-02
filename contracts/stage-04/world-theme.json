@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LoyaltyLaneShadowNoirWorldTheme",
+  "stage": 4,
+  "status": "validated-by-contract",
+  "theme": {
+    "colors": {
+      "obsidian": "#0A0A0C",
+      "charcoal": "#141418",
+      "amber": "#D97706",
+      "textPrimary": "#FFFFFF",
+      "textSecondary": "#E5E7EB",
+      "focus": "#F59E0B"
+    },
+    "typography": {
+      "body": "var(--font-family-body)",
+      "heading": "var(--font-family-body)",
+      "weightDisplay": 800
+    },
+    "spacing": {
+      "unit": "var(--space-unit)",
+      "grid": [8,16,24,32,48]
+    },
+    "motion": {
+      "durationFast": "150ms",
+      "durationStandard": "200ms",
+      "durationSlow": "250ms",
+      "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+      "reducedMotion": "disable-nonessential-motion"
+    },
+    "texture": {
+      "gridLines": true,
+      "seamLines": true,
+      "stitchPattern": true,
+      "opacity": "subdued"
+    },
+    "depth": {
+      "ambientLighting": true,
+      "directionalShadow": true,
+      "overlayElevation": true,
+      "drawerElevation": true,
+      "floatingCtaElevation": true
+    }
+  },
+  "routeBindings": {
+    "/shop": "shadow-noir-catalog",
+    "/product/:productId": "shadow-noir-product",
+    "/tap-stitch": "shadow-noir-stitch-lab",
+    "/bag": "shadow-noir-bag"
+  },
+  "accessibility": {
+    "contrastStandard": "WCAG-AA",
+    "minimumTextContrastRatio": 4.5,
+    "minimumLargeTextContrastRatio": 3,
+    "focusVisible": true,
+    "reducedMotion": true,
+    "touchTargetMinimumPx": 44
+  },
+  "assetPolicy": {
+    "canonicalArtworkRequired": true,
+    "noGenericPlaceholderSubstitution": true,
+    "responsiveVariantsRequired": true
+  },
+  "validation": {
+    "themeTokensBoundToStage03Routes": true,
+    "contrastRatiosSpecified": true,
+    "reducedMotionPreserved": true
+  }
+}
